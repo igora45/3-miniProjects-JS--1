@@ -1,0 +1,443 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --dark-primary: rgb(8, 8, 88);
+  --light-primary: rgb(108, 107, 255);
+  --dark-secondary: linear-gradient(rgb(77, 34, 6), rgb(124, 67, 18));
+  --light-secondary: linear-gradient(rgb(255, 209, 107), rgb(255, 169, 107));
+  --white: #fff;
+  --black: #222;
+  --font-primary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body {
+  font-family: var(--font-primary);
+  transition: 250ms linear;
+}
+.main {
+  width: 100%;
+  padding: 0 3%;
+  margin: 0 auto;
+  background: var(--white);
+  min-height: 100vh;
+  transition: 250ms linear;
+  position: relative;
+}
+/* 
+=================
+nav
+=================
+*/
+
+.navbar {
+  padding: 0.8rem 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.change-backgound-color-btn {
+  position: absolute;
+  top: 0;
+}
+
+/* sidebar ============== */
+.open-sidebar {
+  border: transparent;
+  background: transparent;
+  font-size: 2rem;
+  position: fixed;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+.close-sidebar {
+  cursor: pointer;
+  border: transparent;
+  background: transparent;
+  font-size: 2.5rem;
+  color: white;
+  position: absolute;
+  top: 0.5rem;
+  right: 1.5rem;
+}
+.sidebar-content {
+  background: rgba(0, 0, 0, 0.7);
+  width: 105%;
+  padding-top: 4rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+  height: 100vh;
+  display: grid;
+  transform: translateX(100%);
+  transition: all 200ms linear;
+  z-index: 100;
+}
+.show-sidebar-content {
+  transform: translateX(0%);
+}
+.close-open-sidebar {
+  display: none;
+}
+.sidebar-content h1 {
+  color: white;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0.15rem;
+}
+.sidebar-buttons {
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  row-gap: 2rem;
+}
+.btn-sidebar {
+  color: white;
+  background: transparent;
+  border: 1px solid darkgray;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  border-radius: 0.4rem;
+  margin: 0 auto;
+  cursor: pointer;
+}
+/* 
+=================
+dark-mode
+=================
+*/
+.dark-mode-div {
+  display: flex;
+  align-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  width: 13rem;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.9rem;
+  z-index: 10;
+}
+.dark-mode-div h2 {
+  margin: 0;
+}
+.dark-mode-container form {
+  display: flex;
+}
+.input-dark-mode {
+  visibility: hidden;
+}
+.input-dark-mode:checked + .label-dark-mode {
+  background: white;
+}
+@keyframes toggleOn {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(32px);
+  }
+}
+@keyframes toggleOff {
+  0% {
+    transform: translateX(32px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.input-dark-mode:checked + .label-dark-mode .circle-dark-mode {
+  animation: toggleOn 250ms linear forwards;
+  background: black;
+}
+.label-dark-mode {
+  position: absolute;
+  width: 64px;
+  height: 32px;
+  background-color: lightgray;
+  border-radius: 1.5rem;
+  cursor: pointer;
+}
+.circle-dark-mode {
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  width: 27.2px;
+  height: 27.2px;
+  background: var(--white);
+  border-radius: 50%;
+  animation: toggleOff 250ms linear forwards;
+}
+
+/* BOXES-cotent */
+.boxes-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 100vh;
+}
+/* BOX-1 ----------------- */
+.box-1 {
+  display: grid;
+  place-items: center;
+  margin-top: 3rem;
+  min-width: 20rem;
+  padding: 0.5rem 0;
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.4);
+  background: var(--light-primary);
+  border-radius: 0.5rem;
+  height: 10rem;
+}
+.today-date {
+  margin: 0;
+  display: none;
+}
+.time {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+.btn-start-time {
+  border: transparent;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  background: rgb(194, 21, 209);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.show-date {
+  display: grid;
+}
+/* BOX-2 -----------------*/
+.box-2 {
+  text-align: center;
+  min-width: 20rem;
+  background: var(--light-secondary);
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  height: 225px;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.box-2 .title {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.7rem;
+}
+.form-calc-bmi {
+  display: grid;
+  grid-template-areas: 'a b';
+  column-gap: 1rem;
+}
+.input-weight {
+  grid-area: a;
+}
+.input-height {
+  grid-area: b;
+}
+.input-weight,
+.input-height {
+  border: transparent;
+  background-color: rgb(218, 214, 214);
+  border: 1px solid rgb(122, 122, 122);
+  height: 1.8rem;
+  border-radius: 0.3rem;
+  font-size: 1.2rem;
+  text-align: center;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+.input-weight::placeholder,
+.input-height::placeholder {
+  font-size: 1rem;
+  color: rgb(139, 139, 139);
+}
+.input-bmi-1 p,
+.input-bmi-2 p {
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+.input-value-bmi {
+  width: 5rem;
+}
+.result-bmi {
+  margin: 1rem 0;
+  border: transparent;
+  width: 9rem;
+}
+.bmi-functions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.bmi-button {
+  width: 70px;
+  padding: 0rem 1rem;
+  height: 2.3rem;
+  border-radius: 0.3rem;
+  border: 1px solid rgb(122, 122, 122);
+  font-weight: 700;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.17);
+  cursor: pointer;
+  background: lightgray;
+}
+.reset-bmi-button {
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+/* invalid value  -----------*/
+.invalid-value {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)),
+    url(/img/invalid-value.png);
+  background-position: center;
+  background-size: 100%;
+  place-content: center;
+  border-radius: 0.5rem;
+  display: none;
+}
+.invalid-value h3 {
+  color: rgb(255, 0, 0);
+  font-size: 1.7rem;
+  letter-spacing: 0.05rem;
+}
+.invalid-value-button {
+  background: rgb(248, 2, 2);
+  color: #fff;
+  border: transparent;
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: 10rem;
+  margin: 0 auto;
+  display: block;
+  border-radius: 0.3rem;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+.invalid-value-button:hover {
+  transform: scale(1.1);
+}
+.show-invalid-value {
+  display: grid;
+}
+
+/* CALCULATOR ------------- */
+.calculator-section {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+.calculator-section hr {
+  height: 5px;
+  width: 70%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 217, 255, 0.5),
+    rgba(0, 17, 255, 0.7)
+  );
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+.calculator-section h1 {
+  margin: 0;
+  text-align: center;
+  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.calculator-grid {
+  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.5);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 217, 255, 0.5),
+    rgba(0, 17, 255, 0.5)
+  );
+  border: 3px solid rgba(0, 217, 255, 0.5);
+  border-radius: 0.3rem;
+  animation: 2000ms ease-out 0s infinite alternate borderCalc;
+}
+@keyframes borderCalc {
+  0% {
+    border-top-color: rgba(0, 17, 255, 0.5);
+  }
+  25% {
+    border-right-color: rgba(0, 17, 255, 0.5);
+  }
+  75% {
+    border-bottom-color: rgba(0, 17, 255, 0.5);
+  }
+  100% {
+    border-left-color: rgba(0, 17, 255, 0.5);
+  }
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 1.3rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.calculator-grid > button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 5px 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+.output .current-operand {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 3rem;
+}
+
+/* media queries ============ */
+@media screen and (min-width: 992px) {
+  .navbar {
+    justify-content: center;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+}

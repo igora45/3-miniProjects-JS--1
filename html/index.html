@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS #1</title>
+    <link rel="stylesheet" href="/fontawesome-free-6.1.1-web/css/all.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <nav class="navbar">
+        <div class="dark-mode-div">
+          <h2>Dark Mode</h2>
+          <form action="" class="dark-mode-container">
+            <input type="checkbox" id="dark-mode" class="input-dark-mode" />
+            <label for="dark-mode" class="label-dark-mode">
+              <div class="circle-dark-mode"></div>
+            </label>
+          </form>
+        </div>
+        <button class="sidebar-open-btn open-sidebar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+
+      <!-- sidebar -->
+      <div class="sidebar__content-page sidebar-content">
+        <button class="sidebar-close-btn close-sidebar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h1>OPTIONS</h1>
+        <div class="sidebar-buttons">
+          <button class="btn-sidebar change-background-color-btn">
+            Change Background-Color
+          </button>
+          <button class="btn-sidebar btn-time">Go to Time</button>
+          <button class="btn-sidebar btn-calc-bmi">Go to Calc Bmi</button>
+          <button class="btn-sidebar btn-go-calculator">
+            Go to Calculator
+          </button>
+        </div>
+      </div>
+
+      <section class="boxes-content">
+        <!-- box-1 -->
+        <div class="box-1">
+          <h2 class="today-date">0</h2>
+          <h1 class="time" title="Time">00:00:00</h1>
+          <button class="btn-start-time">Start Time</button>
+        </div>
+
+        <!-- box-2 -->
+        <div class="box-2">
+          <div class="invalid-value">
+            <h3>
+              Invalid Value!<br />
+              Type a valid value
+            </h3>
+            <button class="invalid-value-button">Continue</button>
+          </div>
+          <h1 class="title">Calc BMI</h1>
+          <form class="form-calc-bmi" action="">
+            <div class="input-bmi-1">
+              <p>type your weight</p>
+              <input
+                class="input-value-bmi input-weight"
+                placeholder="weight"
+                type="number"
+              />
+            </div>
+            <div class="input-bmi-2">
+              <p>type your height</p>
+              <input
+                class="input-value-bmi input-height"
+                placeholder="height"
+                type="number"
+              />
+            </div>
+          </form>
+          <div class="bmi-functions">
+            <button class="bmi-button calc-bmi-button">CALC</button>
+            <h3 class="result-bmi">Result: 0</h3>
+            <button class="bmi-button reset-bmi-button">RESET</button>
+          </div>
+        </div>
+      </section>
+      <section class="calculator-section">
+        <h1>CALCULATOR</h1>
+        <hr />
+        <div class="calculator-grid">
+          <div class="output">
+            <div data-previous-operand class="previous-operand"></div>
+            <div data-current-operand class="current-operand"></div>
+          </div>
+          <button data-all-clear class="span-two btn-calculator">AC</button>
+          <button class="btn-calculator" data-delete>DEL</button>
+          <button class="btn-calculator" data-operation>÷</button>
+          <button class="btn-calculator" data-number>1</button>
+          <button class="btn-calculator" data-number>2</button>
+          <button class="btn-calculator" data-number>3</button>
+          <button class="btn-calculator" data-operation>*</button>
+          <button class="btn-calculator" data-number>4</button>
+          <button class="btn-calculator" data-number>5</button>
+          <button class="btn-calculator" data-number>6</button>
+          <button class="btn-calculator" data-operation>+</button>
+          <button class="btn-calculator" data-number>7</button>
+          <button class="btn-calculator" data-number>8</button>
+          <button class="btn-calculator" data-number>9</button>
+          <button class="btn-calculator" data-operation>-</button>
+          <button class="btn-calculator" data-number>.</button>
+          <button class="btn-calculator" data-number>0</button>
+          <button data-equals class="span-two btn-calculator">=</button>
+        </div>
+      </section>
+    </main>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
